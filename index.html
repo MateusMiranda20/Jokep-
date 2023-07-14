@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jokepô</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Jokepô</h1>
+
+        <div class="button">
+            <button id="pedra" onclick="ClickButton('pedra')">&#x1F44A;</button>
+            <button id="papel" onclick="ClickButton('papel')">&#x1F590;</button>
+            <button id="tesoura" onclick="ClickButton('tesoura')">&#x270C;</button>
+        </div>
+
+        <p class="result"></p>
+
+        <div>
+            <p>Sua pontuação: <span id="minhaPontuacao">0</span></p>
+            <p>Pontuação da Alexa: <span id="pontuacaoDaMaquina">0</span></p>
+        </div>
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
