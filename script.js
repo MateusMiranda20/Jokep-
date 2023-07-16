@@ -1,41 +1,40 @@
-const result = document.querySelector(".result")
-const pontuacaoMinha = document.querySelector("#minhaPontuacao")
-const maquinaPontucao = document.querySelector("#pontuacaoDaMaquina")
+const resultado = document.querySelector('.result')
+const humanoV = document.querySelector('#minhaPontuacao')
+const maquinaV = document.querySelector('#pontuacaoDaMaquina')
 
-let pontosMeu = 0;
-let pontosDaMaquina = 0;
+let humanoGanha = 0;
+let maquinaGanha = 0;
 
 const ClickButton = (chamando) => {
-
-    JogarOJogo(chamando, jogarOuPerder())
+    
+    theMaquinaAndHuman(chamando, theGame())
 }
 
-const jogarOuPerder = () => {
-    const mapa = ['pedra', 'papel', 'tesoura']
-    const saida = Math.floor(Math.random() * 3)
+const theGame = () => {
+    const retorna = ['pedra', 'papel', 'tesoura']
+    const soma = Math.floor(Math.random() * 3)
 
-    return mapa[saida]
+    return retorna[soma]
+
 }
 
-const JogarOJogo = (human, maquina) => {
+const theMaquinaAndHuman = (maquina, humano) => {
 
-    console.log('Humano:' + human + "Maquina" + maquina)
+    console.log("Maquina" + maquina + "humano" + humano)
 
-    if (human === maquina) {
-        result.innerHTML = "Deu empate! &#x1F644;"
-
+    if (maquina === humano) {
+        resultado.innerHTML = "Deu empate! &#x1F644;"
     } else if (
-        (human === 'pedra' && maquina === 'tesoura') ||
-        (human === 'tesoura' && maquina === 'papel') ||
-        (human === 'papel' && maquina === 'pedra')
-    ) {
-        pontosMeu++
-        minhaPontuacao.innerHTML = pontosMeu
-        result.innerHTML = "Parabéns você ganhou! &#x1F601;"
+        (humano === "pedra" & maquina === "tesoura") ||
+        (humano === "tesoura" & maquina === "papel") ||
+        (humano === "papel" & maquina === "pedra")
+        ) {
+        humanoGanha++
+        minhaPontuacao.innerHTML = humanoGanha
+        resultado.innerHTML = "Você ganhou &#x1F601;"
     } else {
-        pontosDaMaquina++;
-        pontuacaoDaMaquina.innerHTML = pontosDaMaquina;
-        result.innerHTML = "Você perdeu para alexa! &#x1F636;" 
+        maquinaGanha++
+        pontuacaoDaMaquina.innerHTML = maquinaGanha
+        resultado.innerHTML = "Você perdeu para alexa &#x1F636;"
     }
-
 }
